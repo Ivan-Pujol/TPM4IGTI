@@ -1,18 +1,6 @@
 import express from 'express';
-import { transferAllData } from './tranfer.js'
 import * as clientsController from '../controllers/clientController.js';
 const app = express();
-
-
-app.post('/transferall', (req, res) => {
-  try {
-    transferAllData();
-    res.status(200).send("Inserção realizada com sucesso");
-  } catch (error) {
-    res.status(500).send("erro na inserção")
-  }
-
-});
 
 app.get('/showclients', clientsController.showAllClients);
 
